@@ -1,0 +1,10 @@
+{
+    "watchFolder": "./styles/less",   
+    "outputFolder": "styles",
+    "mainFile": "style.less",   
+    "includeHidden": false,
+    "sourceMap": false,
+    "runOnce": false,
+    "enableJs": true,
+    "minified": true
+}
