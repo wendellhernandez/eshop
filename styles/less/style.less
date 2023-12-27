@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     color: @white;
+    font-family: @font-family-sans;
 }
 
 html{
@@ -13,6 +14,7 @@ html{
 
 body{
     background-color: @background;
+    font-size: .9rem;
 }
 
 main{
@@ -43,12 +45,12 @@ a{
 
     &:hover{
         color: lighten(@main, 20%);
-        transform: scale(1.05);
     }
 }
 
 h1,h2,h3,h4,h5,h6{
     color: @white;
+    font-family: @font-family-mac;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -68,15 +70,11 @@ h3{font-size: 1.2rem;}
 
 .sectionM{
     background-color: @main;
-
-    h1,h2,h3,h4,h5,h6{
-        color: @accent;
-    }
 }
 
 ::-webkit-scrollbar{
-    width: .7rem;
-    height: .7rem;
+    width: .9rem;
+    height: .9rem;
 }
 
 ::-webkit-scrollbar-track{

@@ -1,15 +1,256 @@
 header{
-    background-color: @accent;
+    background-color: @main;
     width: 100%;
-    font-family: @font-family-mac;
+    position: fixed;
+    z-index: 1;
 
     .container{
-        padding: 1em 2em;
-        text-align: center;
+        padding: .5em 2em;
+    }
+
+    .uppernav{
+        text-align: right;
+        margin-bottom: .5em;
+        display: flex;
+        justify-content: space-between;
+        
+        .uppernav-left, .uppernav-right{
+            display: flex;
+            gap: 1.5em;
+        }
+
+        a{
+            color: @white;
+
+            &:hover{
+                color: @orange;
+            }
+        }
+    }
+
+    .lowernav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo{
+            display: flex;
+            gap: .5em;
+            width: 12%;
+    
+            img{
+                height: 2.6em;
+            }
+        }
+
+        .search{
+            width: 75%;
+            display: flex;
+            height: 60%;
+            background-color: @green;
+            border-radius: .3em;
+
+            input{
+                width: 100%;
+                padding: .5em;
+            }
+
+            button{
+                cursor: pointer;
+                padding: .2em .4em;
+
+                &:hover{
+                    background-color: @orange;
+                    fill: @white;
+                }
+            }
+        }
+
+        .cart{
+            height: 2.6em;
+            cursor: pointer;
+            width: 4%;
+            border-radius: .2em;
+        }
     }
 
     h1{
-        font-size: 2rem;
-        text-transform: uppercase;
+        font-size: 1.8rem;
+        font-family: @font-family-mac;
     }
 }
+
+.padding-section{
+    height: 5.43em;
+}
+
+.padding-bottom{
+    height: 50em;
+}
+
+.carousel-section{
+    background-image: url('../assets/home-bg.png');
+    background-size: cover;
+    background-position: center center;
+
+    .container{
+        width: @breakpoint-lg;
+        padding-block: .3em;
+        display: flex;
+        height: 100%;
+    }
+
+    .carousel{
+        overflow-x: hidden;
+        width: 61%;
+        padding-block: .5em;
+        border-radius: .3em;
+
+    }
+
+    .slider{
+        width: 500%;
+        display: flex;
+        transform: translate(0%);
+        transition: .4s ease-in-out;
+    }
+
+    .slider-content{
+        width: 20%;
+        display: flex;
+        justify-content: center;
+
+        .content-left{
+            padding-inline: 1em;
+
+            img{
+                height: 15em;
+            }
+        }
+
+        .content-right{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: .3em;
+
+            button{
+                background-color: @main;
+                padding: .5em .8em;
+                width: 7em;
+                cursor: pointer;
+                border-radius: .3em;
+
+                &:hover{
+                    background-color: @orange;
+                }
+            }
+        }
+    }
+
+    .slider-nav{
+        display: flex;
+        justify-content: center;
+        gap: .5em;
+        margin-top: .6em;
+        cursor: pointer;
+
+        &-button{
+            display: inline-block;
+            width: .6em;
+            height: .6em;
+            background-color: @white;
+            border-radius: .8em;
+            transition: .2s ease-in-out;
+        }
+
+        &-button-active{
+            width: 1.2em;
+        }
+    }
+
+    .spotlight-container{
+        display: flex;
+        width: 39%;
+
+        .spotlight{
+            padding: .6em .3em;
+            margin-left: .3em;
+            display: flex;
+            align-items: center;
+            border-radius: .3em;
+            position: relative;
+
+            &-text{
+                position: absolute;
+                background-color: @yellow;
+                color: @main;
+                font-weight: bold;
+                text-transform: uppercase;
+                padding: .1em .4em;
+            }
+
+            &-brand{
+                bottom: 2.5em;
+                left: 0em;
+            }
+
+            &-mall{
+                font-weight: normal;
+                color: @white;
+                background-color: @main;
+                text-transform: none;
+                right: 0em;
+                top: 2.5em;
+            }
+        }
+
+        img{
+            height: 15em;
+        }
+    }
+}
+
+.category-section{
+    text-align: center;
+
+    .container{
+        padding-block: .7em;
+        width: @breakpoint-md;
+    }
+
+    h1{
+        margin-bottom: .6em;
+    }
+    
+    .category-container{
+        display: flex;
+        justify-content: center;
+        background-color: @white;
+        border-radius: .3em;
+    }
+
+    .category{
+        display: block;
+        width: 12.5%;
+        border-right: 1px solid @gray;
+        padding: 1em;
+
+        &:nth-last-of-type(1){
+            border-right: none;
+        }
+
+        &:hover{
+            box-shadow: 0px 0px 10px 0px @accent;
+        }
+    }
+
+    img{
+        width: 100%;
+    }
+
+    p{
+        color: @accent;
+    }
+}
+
