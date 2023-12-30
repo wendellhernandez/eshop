@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: @white;
+    color: @accent;
     font-family: @font-family-sans;
 }
 
@@ -13,8 +13,12 @@ html{
 }
 
 body{
-    background-color: @background;
+    // background-color: @background;
     font-size: .9rem;
+    background-image: url('../assets/home-bg.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 main{
@@ -24,18 +28,6 @@ main{
 input{
     color: @accent;
 }
-
-@media(max-width: @breakpoint-md){
-main{
-    padding-top: 6.6em;
-} 
-}
-
-@media(max-width: @breakpoint-sm){
-    main{
-        padding-top: 6em;
-    } 
-    }
 
 a{
     text-decoration: none;
@@ -50,7 +42,7 @@ a{
 
 h1,h2,h3,h4,h5,h6{
     color: @white;
-    font-family: @font-family-mac;
+    // font-family: @font-family-mac;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -68,7 +60,7 @@ h3{font-size: 1.2rem;}
     margin: 0 auto;
 }
 
-.sectionM{
+.sectionb{
     background-color: @main;
 }
 
@@ -91,6 +83,7 @@ h3{font-size: 1.2rem;}
     }
 }
 
-@import 'header';
-
+@import 'index';
+@import 'products';
+@import 'products_show';
 @import 'footer';

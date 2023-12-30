@@ -1,0 +1,121 @@
+.productShow-section{
+    padding-block: 2em;
+
+    .productShow-container{
+        width: @breakpoint-lg;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        .image-showcase-wrapper{
+            width: 30%;
+
+            .image-show{
+                margin-bottom: .3em;
+            
+                img{
+                    width: 100%;
+                    aspect-ratio: 1/1;
+                    object-fit: cover;
+                }
+            }
+
+            .image-selection-container{
+                display: flex;
+                justify-content: space-between;
+
+                img{
+                    width: 31.4%;
+                    aspect-ratio: 1/1;
+                    object-fit: cover;
+                    cursor: pointer;
+                }
+
+                .image-selection-hover{
+                    border: 2px solid @accent;
+                }
+            }
+        }
+
+        .product-details-wrapper{
+            width: 68%;
+            background-color: @white;
+            padding: 1em;
+            border-radius: 2px;
+
+            .product-details-title{
+                font-size: 1.2em;
+                margin-bottom: .5em;
+            }
+
+            .product-details-rating{
+                margin-bottom: .5em;
+
+                i{
+                    color: @yellow;
+                    font-size: .8em;
+                }
+
+                span:nth-of-type(2){
+                    margin-left: 1em;
+                }
+
+                span:nth-of-type(3){
+                    margin-left: .5em;
+                    border-left: 1px solid @accent;
+                    padding-left: .7em;
+                }
+            }
+
+            .product-details-price{
+                font-size: 1.5em;
+                color: red;
+                margin-bottom: .5em;
+            }
+
+            .product-details-quantity{
+                margin-bottom: .8em;
+
+                input{
+                    padding: .4em;
+                    margin-left: .6em;
+                }
+            }
+            
+            .product-details-buttons{
+                button{
+                    padding: .5em .8em;
+                    cursor: pointer;
+                    border-radius: .2em;
+                    font-weight: bold;
+                    margin-left: .6em;
+                    font-size: 1rem;
+                }
+
+                .product-details-addcart{
+                    border: 1px solid @main;
+                    color: @main;
+
+                    i{
+                        color: @main;
+                    }
+
+                    &:hover{
+                        background-color: @white;
+                    }
+                }
+
+                .product-details-buynow{
+                    background-color: @main;
+                    color: @white;
+                    border: none;
+                    border: 1px solid @main;
+
+                    &:hover{
+                        background-color: @orange;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,30 +1,70 @@
 header{
     background-color: @main;
     width: 100%;
-    position: fixed;
     z-index: 1;
+    box-shadow: 0 0 10px 0 @accent;
+
+    &.positionFixed{
+        position: fixed;
+    }
 
     .container{
-        padding: .5em 2em;
+        // padding: .5em 2em;
+        padding-block: 1em;
     }
 
     .uppernav{
         text-align: right;
-        margin-bottom: .5em;
+        margin-bottom: .8em;
         display: flex;
         justify-content: space-between;
+
+        .no-border{
+            border: none;
+        }
         
-        .uppernav-left, .uppernav-right{
+        .uppernav-right{
             display: flex;
-            gap: 1.5em;
         }
 
         a{
+            color: @white;
+            border-right: 1px solid #999;
+            padding-inline: .5em;
+
+            &:hover{
+                color: @orange;
+
+                i{
+                    color: @orange;
+                }
+            }
+
+            &:nth-last-of-type(1){
+                padding-right: 0;
+            }
+
+            &:nth-of-type(1){
+                padding-left: 0;
+            }
+        }
+
+        span{
+            margin-left: .5em;
+        }
+
+        i{
+            font-size: 1.2em;
+            transition: .2s ease;
             color: @white;
 
             &:hover{
                 color: @orange;
             }
+        }
+
+        .link-bold{
+            font-weight: bold;
         }
     }
 
@@ -44,7 +84,7 @@ header{
         }
 
         .search{
-            width: 75%;
+            width: 78%;
             display: flex;
             height: 60%;
             background-color: @green;
@@ -57,20 +97,54 @@ header{
 
             button{
                 cursor: pointer;
-                padding: .2em .4em;
+                padding: .2em .8em;
 
                 &:hover{
                     background-color: @orange;
-                    fill: @white;
+
+                    i{
+                        color: @white;
+                    }
+                }
+
+                i{
+                    color: @gray--dark;
+                    font-size: 1.3em;
                 }
             }
         }
 
-        .cart{
-            height: 2.6em;
-            cursor: pointer;
+        .cart-container{
             width: 4%;
-            border-radius: .2em;
+            position: relative;
+
+            &:hover span{
+                background-color: @orange;
+                color: @white;
+            }
+
+            span{
+                position: absolute;
+                right: -.7em;
+                top: -.5em;
+                display: inline-block;
+                color: @main;
+                padding: 0em .3em;
+                border-radius: .5em;
+                background-color: @white;
+                font-size: .9em;
+                font-weight: bold;
+                border: 2px solid @main;
+            }
+        }
+
+        .cart{
+            width: 100%;
+
+            i{
+                font-size: 1.9em;
+                color: @white;
+            }
         }
     }
 
@@ -81,18 +155,10 @@ header{
 }
 
 .padding-section{
-    height: 5.43em;
-}
-
-.padding-bottom{
-    height: 50em;
+    height: 6.7em;
 }
 
 .carousel-section{
-    background-image: url('../assets/home-bg.png');
-    background-size: cover;
-    background-position: center center;
-
     .container{
         width: @breakpoint-lg;
         padding-block: .3em;
@@ -134,12 +200,18 @@ header{
             justify-content: center;
             gap: .3em;
 
+            h1{
+                margin-bottom: .2em;
+            }
+
             button{
                 background-color: @main;
                 padding: .5em .8em;
                 width: 7em;
                 cursor: pointer;
                 border-radius: .3em;
+                color: @white;
+                font-weight: bold;
 
                 &:hover{
                     background-color: @orange;
@@ -219,7 +291,7 @@ header{
         width: @breakpoint-md;
     }
 
-    h1{
+    h2{
         margin-bottom: .6em;
     }
     
@@ -228,6 +300,7 @@ header{
         justify-content: center;
         background-color: @white;
         border-radius: .3em;
+        margin-bottom: 3em;
     }
 
     .category{
@@ -252,5 +325,78 @@ header{
     p{
         color: @accent;
     }
+
+    .ad-container{
+        display: flex;
+        justify-content: center;
+        gap: .2em;
+
+        img{
+            width: 45%;
+        }
+    }
 }
 
+.newArrivals-section{
+    padding-block: .7em;
+    text-align: center;
+
+    .container{
+        width: 30em;
+    }
+
+    h2{
+        margin-bottom: .2em;
+    }
+
+    p{
+        margin-bottom: .5em;
+    }
+
+    .arrivals-container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .arrivals{
+        width: 33%;
+        background-color: #fff;
+        max-height: 12em;
+        padding-bottom: .8em;
+
+        &:hover{
+            box-shadow: 0 0 10px 0 @accent;
+        }
+
+        &:nth-of-type(1){
+            border-top-left-radius: .4em;
+            border-bottom-left-radius: .4em;
+        }
+
+        &:nth-last-of-type(1){
+            border-top-right-radius: .4em;
+            border-bottom-right-radius: .4em;
+        }
+
+        &-img{
+            height: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img{
+            max-width: 100%;
+            max-height: 100%;
+            padding: 1em;
+            background-color: #fff;
+            border-top-left-radius: 1em;
+            border-top-right-radius: .4em;
+        }
+
+        p{
+            color: @accent;
+            height: 10%;
+        }
+    }
+}
