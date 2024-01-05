@@ -1,0 +1,109 @@
+.cart-section{
+    padding-block: 2em;
+
+    .cart-wrapper{
+        width: @breakpoint-lg;
+        margin: 0 auto;
+    }
+
+    .cart-uppertitle-wrapper{
+        background-color: @white;
+        padding: 1em;
+        border-radius: 2px;
+        border-bottom: 1px solid @gray;
+        display: flex;
+        margin-bottom: .2em;
+
+        div{
+            width: 15%;
+            text-align: center;
+
+            &:nth-of-type(1){
+                width: 60%;
+                text-align: left;
+            }
+        }
+    }
+
+    .cart-product-wrapper{
+        background-color: @white;
+        border-radius: 2px;
+        border-bottom: 1px solid @gray;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin-bottom: .2em;
+
+        .cart-product-container{
+            display: flex;
+            align-items: center;
+
+            div{
+                width: 15%;
+                text-align: center;
+    
+                &:nth-of-type(1){
+                    width: 60%;
+                    text-align: left;
+                    display: flex;
+                    gap: 1em;
+                    align-items: center;
+                    cursor: pointer;
+    
+                    img{
+                        height: 5em;
+                        aspect-ratio: 1/1;
+                        object-fit: cover;
+                    }
+                }
+    
+                input{
+                    width: 4em;
+                    padding: .3em;
+                }
+            }
+    
+            .cart-product-update{
+                cursor: pointer;
+                color: red;
+                font-weight: bold;
+                display: inline-block;
+                margin-bottom: .7em;
+            }
+    
+            .cart-product-delete{
+                cursor: pointer;
+            }
+        }
+    }
+
+    .cart-checkout-wrapper{
+        background-color: @white;
+        padding: 1em;
+        border-radius: 2px;
+        border-bottom: 1px solid @gray;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+
+        .cart-checkout-total{
+            color: red;
+            margin-inline: 1em;
+            font-size: 1.2rem;
+        }
+
+        button{
+            background-color: @main;
+            padding: .5em .8em;
+            width: 7em;
+            cursor: pointer;
+            border-radius: .3em;
+            color: @white;
+
+            &:hover{
+                background-color: @orange;
+            }
+        }
+    }
+}

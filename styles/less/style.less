@@ -42,13 +42,7 @@ a{
 
 h1,h2,h3,h4,h5,h6{
     color: @white;
-    // font-family: @font-family-mac;
-}
-
-h1,h2,h3,h4,h5,h6{
-    span{
-        color: @main;
-    }
+    font-weight: 400;
 }
 
 h1{font-size: 1.8rem;}
@@ -70,20 +64,21 @@ h3{font-size: 1.2rem;}
 }
 
 ::-webkit-scrollbar-track{
-    background-color: lighten(@background, 5%);
+    background-color: #888;
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: @main;
-    border-radius: 100vw;
-    border: .15em solid lighten(@background, 5%);
+    background-color: #222;
 
     &:hover{
-        background-color: lighten(@main, 10%);
+        background-color: #333;
     }
 }
 
 @import 'index';
 @import 'products';
 @import 'products_show';
+@import 'cart';
+@import 'login';
+@import 'account';
 @import 'footer';

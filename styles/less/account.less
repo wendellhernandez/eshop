@@ -1,0 +1,118 @@
+.account-main-section{
+    padding-block: 4em;
+    background-color: @main;
+
+    .account-main-container{
+        margin: 0 auto;
+        width: @breakpoint-lg;
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+    }
+
+    .account-main-left{
+        background-color: @white;
+        padding: 1.8em;
+        border-radius: 3px;
+        width: 40%;
+        align-self: flex-start;
+        text-align: center;
+
+        .account-form-top{
+            span{
+                display: inline-block;
+                margin-bottom: .5em;
+            }
+        }
+
+        h2{
+            margin-bottom: 1em;
+            color: @accent;
+            font-weight: bold;
+        }
+
+        p{
+            color: #555;
+        }
+
+        img{
+            width: 13em;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 100vw;
+            margin-bottom: 1em;
+            cursor: pointer;
+        }
+
+        span{
+            font-weight: bold;
+        }
+
+        button{
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: red;
+
+            &:hover{
+                color: @orange;
+            }
+        }
+
+        .account-form-noaddress{
+            color: red;
+        }
+    }
+
+    .account-main-right{
+        background-color: @white;
+        padding: 1.8em;
+        border-radius: 3px;
+        width: 40%;
+        align-self: flex-start;
+        display: none;
+
+        .account-form-top{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1em;
+
+            h2{
+                color: @accent;
+                font-weight: bold;
+            }
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+
+            input, label{
+                margin-bottom: .5em;
+            }
+
+            input{
+                padding: .7em;
+
+                &[type='submit']{
+                    background-color: @main;
+                    cursor: pointer;
+                    border: 1px solid @main;
+                    color: @white;
+                    border-radius: 2px;
+                    margin-block: 1.7em;
+
+                    &:hover{
+                        background-color: @orange;
+                    }
+                }
+            }
+
+            p{
+                text-align: center;
+                color: #aaa;
+            }
+
+        }
+    }
+}

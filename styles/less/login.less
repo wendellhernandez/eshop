@@ -1,0 +1,130 @@
+.login-header-section{
+    background-color: @white;
+    padding-block: 1em;
+
+    .login-header-container{
+        width: @breakpoint-lg;
+        margin: 0 auto;
+    }
+
+    .login-header-logo{
+        display: flex;
+
+        img{
+            height: 3em;
+        }
+
+        h1{
+            &:nth-of-type(1){
+                margin-left: .1em;
+                color: @main;
+            }
+
+            &:nth-of-type(2){
+                margin-left: .6em;
+                color: @accent;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.login-main-section{
+    padding-block: 4em;
+    background-color: @main;
+
+    .login-main-container{
+        margin: 0 auto;
+        width: @breakpoint-lg;
+        display: flex;
+        justify-content: center;
+        gap: 5em;
+    }
+
+    .login-main-left{
+        text-align: center;
+        width: 40%;
+        cursor: default;
+
+        h1{
+            font-size: 3.6rem;
+            margin-bottom: .7em;
+        }
+
+        h2{
+            font-size: 1.7rem;
+        }
+    }
+
+    .login-main-right{
+        background-color: @white;
+        padding: 1.8em;
+        border-radius: 3px;
+        width: 40%;
+        align-self: flex-start;
+
+        .login-form-top{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1em;
+
+            h2{
+                color: @accent;
+            }
+
+            img{
+                cursor: pointer;
+            }
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+
+            input, label{
+                margin-bottom: .5em;
+            }
+
+            input{
+                padding: .7em;
+
+                &[type='submit']{
+                    background-color: @main;
+                    cursor: pointer;
+                    border: 1px solid @main;
+                    color: @white;
+                    border-radius: 2px;
+                    margin-block: 1.7em;
+
+                    &:hover{
+                        background-color: @orange;
+                    }
+                }
+            }
+        }
+
+        .login-form-warning{
+            color: red;
+            text-align: center;
+            margin-bottom: 1.5em;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .login-form-haveAccount{
+            text-align: center;
+            color: #aaa;
+        }
+    }
+}
+
+.login-download-section{
+    background-color: #f5f5f5;
+    padding: 4em;
+    text-align: center;
+
+    p{
+        font-weight: bold;
+        margin-bottom: 1em;
+    }
+}
