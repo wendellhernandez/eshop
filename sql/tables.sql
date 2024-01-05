@@ -1,10 +1,12 @@
+CREATE DATABASE IF NOT EXISTS eshop_db;
+
 CREATE TABLE IF NOT EXISTS users(
     `user_id` INT(11) NOT NULL AUTO_INCREMENT,
     `username` VARCHAR(255) NOT NULL UNIQUE,
     `email` VARCHAR(255) NOT NULL UNIQUE,
     `password` VARCHAR(255) NOT NULL,
     `reg_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (`users_id`)
+    PRIMARY KEY (`user_id`)
 )
 
 CREATE TABLE IF NOT EXISTS addresses(
@@ -14,7 +16,7 @@ CREATE TABLE IF NOT EXISTS addresses(
     `city` VARCHAR(255) NOT NULL,
     `province` VARCHAR(255) NOT NULL,
     `postal_code` INT(11) NOT NULL,
-    `users_id` INT(11) NOT NULL,
+    `user_id` INT(11) NOT NULL,
     PRIMARY KEY (`address_id`),
-    FOREIGN KEY (`users_id`) REFERENCES users (`users_id`) ON DELETE CASCADE
+    FOREIGN KEY (`user_id`) REFERENCES users (`user_id`) ON DELETE CASCADE
 )

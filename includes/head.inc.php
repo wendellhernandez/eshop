@@ -1,5 +1,6 @@
 <?php 
-    session_start();
+    require_once 'handlers/session_config.inc.php';
+    require_once 'head_ctrl.inc.php';
 ?>
 
 <!DOCTYPE html>

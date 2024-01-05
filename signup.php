@@ -1,9 +1,7 @@
 <?php
-    if(isset($_SESSION['logged_in'])){ 
-        header('location: ./');
-    }
+    require_once 'includes/head.inc.php';
 
-    include 'includes/head.inc.php';
+    if_logged_in_gobackto_index();
 ?>
     <title>Sign Up today! - eShop Philippines</title>
 </head>
@@ -11,7 +9,7 @@
     <main>
         <section class="login-header-section">
             <div class="login-header-container">
-                <a href="signup.php" class="login-header-logo">
+                <a href="./" class="login-header-logo">
                     <img src="assets/logo.png">
                     <h1>eShop</h1>
                     <h1>Sign Up</h1>
@@ -31,17 +29,22 @@
                     <div class="login-form-top">
                         <h2>Sign Up</h2>
                     </div>
-                    <form action="handlers/signup_handler.inc.php" method="post">
-                        <label for="username">Username</label>
-                        <input required type="text" name="username" id="username">
-                        <label for="email">Email</label>
-                        <input required type="email" name="email" id="email">
+
+                    <?php
+                        require_once 'handlers/signup_view.inc.php';
+                        check_signup_error();
+                        check_signup_success();
+                    ?>
+
+                    <form action="handlers/signup.inc.php" method="post">
+                        <?php get_signup_input_data(); ?>
                         <label for="password">Password</label>
                         <input required type="password" name="password" id="password">
                         <label for="confirmpassword">Confirm Password</label>
                         <input required type="password" name="confirmpassword" id="confirmpassword">
                         <input type="submit" value="SIGN UP">
                     </form>
+
                     <p class="login-form-haveAccount">
                         Have an account?
                         <a href="login.php">Log In</a>
@@ -57,7 +60,6 @@
     </main>
 
     <?php include 'includes/footer.inc.php'; ?>
-    
     <!-- <script src="scripts/login.js"></script> -->
 </body>
 </html>

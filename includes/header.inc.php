@@ -1,15 +1,3 @@
-<?php 
-    if(isset($_SESSION['username'])){
-        $username = htmlspecialchars($_SESSION['username']);
-    }else{
-        if($_SERVER['PHP_SELF'] === '/eshop/index.php'){
-
-        }else{
-            header('Location: ./');
-        }
-    }
-?>
-
 <div class="container">
     <div class="uppernav">
         <div class="uppernav-left">
@@ -23,15 +11,13 @@
             <a href="#" class="no-border"><i class="fa-regular fa-bell"></i>&nbsp;&nbsp;Notification</a>
             <a href="#" class="no-border"><i class="fa-regular fa-circle-question"></i>&nbsp;&nbsp;Help</a>
 
-            <?php if(isset($username)){ ?>
-            <a href="account.php" class="link-bold no-border"><?php echo $username ?></a>
-            <form action="handlers/logout_handler.inc.php" method="post">
-                <input type="submit" value="logout">
-            </form>
-            <?php }else{ ?>
-                <a href="signup.php" class="link-bold">Sign Up</a>
-                <a href="login.php" class="link-bold no-border">Login</a>
-            <?php } ?>
+            <?php
+                require_once 'header_view.inc.php';
+
+                show_header_account_navbar();
+            ?>
+
+            
         </div>
     </div>
     <div class="lowernav">

@@ -1,9 +1,5 @@
 <?php 
     include 'includes/head.inc.php'; 
-    include 'handlers/account_get_address.inc.php';
-
-    $email = htmlspecialchars($_SESSION['email']);
-    $reg_date = htmlspecialchars($_SESSION['reg_date']);
 ?>
     <title><?php echo $_SESSION['username'] ?> | account - eShop Philippines</title>
 </head>

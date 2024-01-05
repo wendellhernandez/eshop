@@ -1,9 +1,7 @@
 <?php
-    if(isset($_SESSION['logged_in'])){ 
-        header('location: ./');
-    }
+    require_once 'includes/head.inc.php';
 
-    include 'includes/head.inc.php';
+    if_logged_in_gobackto_index();
 ?>
 
     <title>Log In now to start shopping! - eShop Philippines</title>
@@ -12,7 +10,7 @@
     <main>
         <section class="login-header-section">
             <div class="login-header-container">
-                <a href="login.php" class="login-header-logo">
+                <a href="./" class="login-header-logo">
                     <img src="assets/logo.png">
                     <h1>eShop</h1>
                     <h1>Log In</h1>
@@ -33,11 +31,16 @@
                         <h2>Log In</h2>
                         <img src="assets/login/login-pass.png">
                     </div>
-                    <form action="handlers/login_handler.inc.php" method="post">
-                        <label for="username">Username</label>
-                        <input required type="text" name="username" id="username">
+
+                    <?php
+                        require_once 'handlers/login_view.inc.php';
+                        get_login_errors();
+                    ?>
+
+                    <form action="handlers/login.inc.php" method="post">
+                        <?php set_login_input_data(); ?>
                         <label for="password">Password</label>
-                        <input required type="password" name="password" id="password">
+                        <input type="password" name="password" id="password">
                         <input type="submit" value="LOG IN">
                     </form>
                     <p class="login-form-haveAccount">
