@@ -18,14 +18,14 @@ function set_login_input_data(){
 
         echo '
         <label for="username">Username</label>
-        <input type="text" name="username" id="username" value="'.$username.'">
+        <input required type="text" name="username" id="username" value="'.$username.'">
         ';
 
         unset($_SESSION['login_data']);
     }else{
         echo '
         <label for="username">Username</label>
-        <input type="text" name="username" id="username">
+        <input required type="text" name="username" id="username">
         ';
     }
 }

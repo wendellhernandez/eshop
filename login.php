@@ -40,7 +40,7 @@
                     <form action="handlers/login.inc.php" method="post">
                         <?php set_login_input_data(); ?>
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="password">
+                        <input required type="password" name="password" id="password">
                         <input type="submit" value="LOG IN">
                     </form>
                     <p class="login-form-haveAccount">

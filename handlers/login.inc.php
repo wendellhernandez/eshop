@@ -34,13 +34,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         $_SESSION['logged_in'] = true;
         $_SESSION['user_id'] = $users_table_data['user_id'];
-        $_SESSION['username'] = $users_table_data['username'];
-        $_SESSION['email'] = $users_table_data['email'];
-        $_SESSION['reg_date'] = $users_table_data['reg_date'];
+        $_SESSION['username'] = htmlspecialchars($users_table_data['username']);
+        $_SESSION['email'] = htmlspecialchars($users_table_data['email']);
+        $_SESSION['reg_date'] = htmlspecialchars($users_table_data['reg_date']);
         
         header('Location: ../');
+        $pdo = NULL;
+        $stmt = NULL;
         die();
-
     } catch (PDOException $e) {
         die('Query Failed: ' . $e->getMessage());
     }
