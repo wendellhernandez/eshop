@@ -1,11 +1,11 @@
 <?php 
-    include 'includes/head.inc.php'; 
+    include 'page_includes/head.inc.php'; 
 ?>
     <title><?php echo $_SESSION['username'] ?> | account - eShop Philippines</title>
 </head>
 <body>
     <header>
-        <?php include 'includes/header.inc.php'; ?>
+        <?php include 'page_includes/header.inc.php'; ?>
     </header>
 
     <main>
@@ -70,7 +70,7 @@
         </section>
     </main>
 
-    <?php include 'includes/footer.inc.php'; ?>
+    <?php include 'page_includes/footer.inc.php'; ?>
     
     <script src="scripts/account.js"></script>
 </body>

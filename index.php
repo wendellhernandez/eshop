@@ -1,9 +1,9 @@
-<?php include 'includes/head.inc.php'; ?>
+<?php include 'page_includes/head.inc.php'; ?>
     <title>eShop Philippines - The leading online shopping platform in the World</title>
 </head>
 <body>
     <header class="positionFixed">
-        <?php include 'includes/header.inc.php'; ?>
+        <?php include 'page_includes/header.inc.php'; ?>
     </header>
 
     <main>
@@ -149,7 +149,7 @@
         </section>
     </main>
 
-    <?php include 'includes/footer.inc.php'; ?>
+    <?php include 'page_includes/footer.inc.php'; ?>
 
     <script src="scripts/app.js"></script>
 </body>

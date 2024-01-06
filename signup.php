@@ -1,5 +1,5 @@
 <?php
-    require_once 'includes/head.inc.php';
+    require_once 'page_includes/head.inc.php';
 
     if_logged_in_gobackto_index();
 ?>
@@ -31,17 +31,17 @@
                     </div>
 
                     <?php
-                        require_once 'handlers/signup_view.inc.php';
-                        check_signup_error();
-                        check_signup_success();
                     ?>
 
-                    <form action="handlers/signup.inc.php" method="post">
-                        <?php get_signup_input_data(); ?>
+                    <form action="includes/signup.inc.php" method="post">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
                         <label for="password">Password</label>
-                        <input required type="password" name="password" id="password">
+                        <input type="password" name="password" id="password">
                         <label for="confirmpassword">Confirm Password</label>
-                        <input required type="password" name="confirmpassword" id="confirmpassword">
+                        <input type="password" name="confirmpassword" id="confirmpassword">
                         <input type="submit" value="SIGN UP">
                     </form>
 
@@ -59,7 +59,7 @@
         </section>
     </main>
 
-    <?php include 'includes/footer.inc.php'; ?>
+    <?php include 'page_includes/footer.inc.php'; ?>
     <!-- <script src="scripts/login.js"></script> -->
 </body>
 </html>

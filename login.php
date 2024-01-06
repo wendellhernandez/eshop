@@ -1,5 +1,5 @@
 <?php
-    require_once 'includes/head.inc.php';
+    require_once 'page_includes/head.inc.php';
 
     if_logged_in_gobackto_index();
 ?>
@@ -33,12 +33,13 @@
                     </div>
 
                     <?php
-                        require_once 'handlers/login_view.inc.php';
-                        get_login_errors();
+                        // require_once 'handlers/login_view.inc.php';
+                        // get_login_errors();
                     ?>
 
                     <form action="handlers/login.inc.php" method="post">
-                        <?php set_login_input_data(); ?>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username">
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password">
                         <input type="submit" value="LOG IN">
@@ -57,7 +58,7 @@
         </section>
     </main>
 
-    <?php include 'includes/footer.inc.php'; ?>
+    <?php include 'page_includes/footer.inc.php'; ?>
 
     <script src="scripts/login.js"></script>
 </body>
