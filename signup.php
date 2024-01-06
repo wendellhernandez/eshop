@@ -1,5 +1,7 @@
 <?php
     require_once 'page_includes/head.inc.php';
+    require_once 'classes/Signup_view.class.php';
+    $signup_view = new Signup_view();
 
     if_logged_in_gobackto_index();
 ?>
@@ -29,15 +31,14 @@
                     <div class="login-form-top">
                         <h2>Sign Up</h2>
                     </div>
-
+                        
                     <?php
+                        $signup_view->set_signup_input_error();
+                        $signup_view->set_signup_success_message();
                     ?>
 
                     <form action="includes/signup.inc.php" method="post">
-                        <label for="username">Username</label>
-                        <input type="text" name="username" id="username">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email">
+                        <?php $signup_view->set_signup_input_value(); ?>
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password">
                         <label for="confirmpassword">Confirm Password</label>

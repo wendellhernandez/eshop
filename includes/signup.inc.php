@@ -6,40 +6,35 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $password = $_POST['password'];
     $confirmpassword = $_POST['confirmpassword'];
 
+    require_once '../page_includes/session_config.inc.php';
     require_once '../classes/Dbh.class.php';
     require_once '../classes/Signup_model.class.php';
     require_once '../classes/Signup_contr.class.php';
     $signup_contr = new Signup_contr();
 
     //ERROR HANDLERS
-    $error = [];
+    $errors = [];
 
     if($signup_contr->is_input_empty($username, $email, $password, $confirmpassword)){
-        $error['input_empty'] = 'Fill in all fields!<br>';
+        $errors['input_empty'] = 'Fill in all fields!<br>';
     }
     if($signup_contr->is_username_taken($username)){
-        $error['username_taken'] = 'Username already taken!<br>';
+        $errors['username_taken'] = 'Username already taken!<br>';
     }
     if($signup_contr->is_email_invalid($email)){
-        $error['email_invalid'] = 'Invalid Email!<br>';
+        $errors['email_invalid'] = 'Invalid Email!<br>';
     }
     if($signup_contr->is_email_registered($username, $email)){
-        $error['email_registered'] = 'Email alredy registered!<br>';
+        $errors['email_registered'] = 'Email alredy registered!<br>';
     }
     if($signup_contr->does_password_not_match($username, $password, $confirmpassword)){
-        $error['password_not_match'] = 'Passwords does not match!<br>';
+        $errors['password_not_match'] = 'Passwords does not match!<br>';
     }
+    $signup_contr->is_there_errors($errors, $username, $email);
 
-    if($error){
-        foreach($error as $err){
-            echo $err;
-        }
-
-        die();
-    }
-
-    
-
+    //SIGNUP USER
+    $signup_contr->signupUser($username, $email, $password);
+    header('Location: ../signup.php');
     die();
 }else{
     header('Location: ./');
